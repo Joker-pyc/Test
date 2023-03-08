@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>My Game</title>
+
+
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: grey;
+        user-select: none;
+      }
+          #joystick-container {
+      position: absolute;
+      width: 100px;
+      height:100px;
+      top: 60%;
+      left: 20%;
+      
+      
+    </style>
+  </head>
+  <body>
+    
+            <script defer type="importmap">
+          {  
+				"imports": {
+					"three": "/build/three.module.js",
+					"ammo":"../build/Ammo.js", 
+					"three/addons/": "../jsm"
+					
+					
+				}
+			}
+		</script>
+
+     
+<script defer src="/build/ammo.js"></script>
+<script defer src="/build/Detector.js"></script>
+<script defer type="module" src="/main.js"></script>
+
+
+<div id="joystick-container"></div>
+
+  </body>
+    

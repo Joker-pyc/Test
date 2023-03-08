@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vegetarian Meal Plan</title>
+  </head>
+  <body>
+        <style>
+      /* CSS styles for the entire page */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+      
+      /* CSS styles for the header section */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #4caf50;
+        padding: 20px;
+        color: white;
+      }
+      
+      nav ul {
+        display: flex;
+      }
+      
+      nav li {
+        list-style: none;
+        margin-right: 20px;
+      }
+      
+      nav a {
+        text-decoration: none;
+        color: white;
+        transition: all 0.3s ease-in-out;
+      }
+      
+      nav a:hover {
+        color: #c7ffd8;
+      }
+      
+      /* CSS styles for the main section */
+      main {
+        padding: 40px;
+      }
+      
+      h2 {
+        margin-bottom: 20px;
+        color: #4caf50;
+        font-weight: normal;
+        font-size: 24px;
+        position: relative;
+      }
+      
+      h2::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 50px;
+        height: 4px;
+        background-color: #4caf50;
+        transition: all 0.3s ease-in-out;
+      }
+      
+      h2:hover::after {
+        width: 100%;
+      }
+      
+      ul {
+        list-style: none;
+      }
+      
+      li {
+        margin-bottom: 10px;
+      }
+      
+      /* CSS styles for the footer section */
+      footer {
+        background-color: #eee;
+        padding: 20px;
+        text-align: center;
+      }
+      
+      /* CSS styles for animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      
+      section {
+        animation: fadeIn 1s ease-in-out;
+      }
+      
+      @keyframes slideIn {
+        from {
+          transform: translateX(100%);
+        }
+        to {
+          transform: translateX(0);
+        }
+      }
+      
+      li {
+        animation: slideIn 0.5s ease-in-out;
+        animation-fill-mode: backwards;
+      }
+    </style>
+    <header>
+      <h1>Vegetarian Meal Plan</h1>
+      <nav>
+        <ul>
+          <li><a href="#breakfast">Breakfast</a></li>
+          <li><a href="#snacks">Snacks</a></li>
+          <li><a href="#lunch">Lunch</a></li>
+          <li><a href="#dinner">Dinner</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="breakfast">
+        <h2>Breakfast</h2>
+        <ul>
+          <li>Oatmeal with nuts and seeds, topped with sliced banana and a drizzle of honey</li>
+          <li>Greek yogurt or plant-based yogurt with mixed berries</li>
+          <li>Whole grain toast with avocado and a boiled egg (if you consume eggs as a vegetarian)</li>
+        </ul>
+      </section>
+      <section id="snacks">
+        <h2>Snacks</h2>
+        <ul>
+          <li>Apple slices with almond butter</li>
+          <li>Roasted chickpeas</li>
+          <li>Protein smoothie made with plant-based protein powder, almond milk, banana, and spinach</li>
+        </ul>
+      </section>
+      <section id="lunch">
+        <h2>Lunch</h2>
+        <ul>
+          <li>Spinach salad with chickpeas, sliced almonds, and quinoa</li>
+          <li>Lentil soup with whole grain bread</li>
+          <li>Veggie stir-fry with tofu, brown rice, and mixed vegetables</li>
+        </ul>
+      </section>
+      <section id="dinner">
+        <h2>Dinner</h2>
+        <ul>
+          <li>Grilled vegetable skewers with halloumi cheese (if you consume dairy as a vegetarian) or tofu, served with quinoa or brown rice</li>
+          <li>Lentil or chickpea curry with brown rice and naan bread</li>
+          <li>Stuffed sweet potato with black beans, avocado, and salsa</li>
+        </ul>
+      </section>
+    </main>
+    <footer>
+      <p>© 2023 </p>
+    </footer>
+  </body>
+</html>
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Mosquito Repellent</title>
+  </head>
+  <body>
+    <button onclick="play()">Start Mosquito Repellent</button>
+    <button onclick="stop()">Stop Mosquito Repellent</button>
+    <script>
+      // Create an AudioContext instance
+      const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+      // Create an oscillator node
+      const oscillator = audioCtx.createOscillator();
+
+      // Set the frequency to 20 kHz
+      oscillator.frequency.value = 20000;
+
+      // Connect the oscillator to the output
+      oscillator.connect(audioCtx.destination);
+
+      // Function to play the sound
+      function play() {
+        oscillator.start();
+      }
+
+      // Function to stop the sound
+      function stop() {
+        oscillator.stop();
+      }
+    </script>
+  </body>
+</html>

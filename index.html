@@ -14,6 +14,8 @@
         overflow: hidden;
         background-color: grey;
         user-select: none;
+        font-family: "Courier New", Courier, monospace;
+
       }
           #joystick-container {
       position: absolute;
@@ -22,11 +24,38 @@
       top: 60%;
       left: 20%;
       
+          }
+          #sphere-position {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 250px;
+  height: 50px;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  color: #fff;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 50px;
+  animation: move-top-right 2s ease-in-out forwards;
+}
+
+#sphere-coordinates {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+   
       
     </style>
   </head>
   <body>
-    
+    <div id="sphere-position">Sphere Position: <span id="sphere-coordinates"></span></div>
+
+
             <script defer type="importmap">
           {  
 				"imports": {

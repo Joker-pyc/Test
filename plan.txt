@@ -33,3 +33,85 @@ Lentil or chickpea curry with brown rice and naan bread
 Stuffed sweet potato with black beans, avocado, and salsa
 
 🫥🫠🥹🫡🫣👥🫶🦻🫴🫳🫱🫲🪬🪤
+
+
+// Create joystick object
+/*const joystick = new VirtualJoystick(container, {
+  width: 150,
+  height: 150,
+  color: 'grey',
+  handleColor: 'black',
+  handleRadius: 38,
+  onChange: function(delta) {
+    // Calculate sphere rotation based on camera azimuthal angle
+    const sphereRotation = new THREE.Vector3(0, controls.getAzimuthalAngle(), 0);
+
+    // Calculate sphere direction and speed based on joystick input
+    const speed = new THREE.Vector3(delta.x, 0, delta.y);
+    speed.applyAxisAngle(new THREE.Vector3(0, 1, 0), sphereRotation.y);
+    sphereDirection.copy(speed);
+
+    // Apply acceleration and deceleration to sphere movement
+    const acceleration = new THREE.Vector3(0, 0, 0);
+    const maxSpeed = 10;
+    if (Math.sqrt(delta.x * delta.x + delta.y * delta.y) > 0) {
+      acceleration.copy(sphereDirection.normalize());
+      acceleration.multiplyScalar(0.1);
+      sphereSpeed = Math.min(sphereSpeed + acceleration.length(), maxSpeed);
+    } else {
+      sphereSpeed = Math.max(sphereSpeed - 0.1, 0);
+    }
+    sphereDirection.multiplyScalar(sphereSpeed);
+
+    // Apply sphere movement to sphere physics body
+    const physicsBody = sphereBody;
+    const velocity = new Ammo.btVector3(sphereDirection.x, sphereDirection.y, sphereDirection.z);
+    physicsBody.setLinearVelocity(velocity);
+    physicsBody.setActivationState(1);
+  }
+});
+*/
+
+loop
+    // Check for collisions between the sphere and the ground
+ /*   let dispatcher = world.getDispatcher();
+    let numManifolds = dispatcher.getNumManifolds();
+    for (let i = 0; i < numManifolds; i++) {
+      let contactManifold = dispatcher.getManifoldByIndexInternal(i);
+      let rb0 = Ammo.castObject(contactManifold.getBody0(), Ammo.btRigidBody);
+      let rb1 = Ammo.castObject(contactManifold.getBody1(), Ammo.btRigidBody);
+
+      if ((rb0 === sphereBody && rb1 === groundBox.body) || (rb0 === groundBox.body && rb1 === sphereBody)) {
+        let numContacts = contactManifold.getNumContacts();
+        for (let j = 0; j < numContacts; j++) {
+          let contactPoint = contactManifold.getContactPoint(j);
+          let distance = contactPoint.getDistance();
+          if (distance < 0) {
+            console.log("Sphere collided with ground!");
+          }
+        }
+      }
+    }*/
+    
+    
+    
+    const spherePositionn = new THREE.Vector3(0, 10, 0);
+    const sphereRadiuss = 1;
+    const sphereMasss = 1;
+    const spheree = new Sphere(scene, world, spherePositionn, sphereRadiuss, sphereMasss);
+    spheree.setFriction(1);
+    spheree.setBounciness(1);
+    
+    
+    // Create a Capsule object
+    const position = new THREE.Vector3(0, 5, 0);
+    const radius = 0.5;
+    const height = 1.0;
+    const mass = 1.0;
+    const capsule = new Capsule(scene, world, position, radius, height, mass);
+    
+    const mySphere = new Objects.Sphere(scene, world, spherePositionn, sphereRadiuss, sphereMasss);
+    
+    spheree.update();
+    capsule.update();
+    mySphere.update();

@@ -239,10 +239,6 @@ const cameraDistance = 20;
 // Define a variable to store the previous camera position
 let previousCameraPosition = new THREE.Vector3();
 
-// Update the camera position
-
-// Store the previous camera position
-
 
 
 // Create the sphere mesh
